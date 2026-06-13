@@ -41,42 +41,76 @@
     width: 100% !important;
   }
 
-  header .ap-nav-right {
+  header .ap-desktop-nav,
+  header .ap-desktop-actions {
     display: none !important;
   }
 
-  header .ap-mobile-menu-toggle {
+  header .ap-hamburger {
     display: flex !important;
   }
 
-  header .ap-nav-links {
-    display: none !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
+  .ap-mobile-drawer {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    padding: var(--container-pad);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ap-mobile-drawer nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ap-mobile-drawer nav:first-of-type {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ap-mobile-drawer nav:last-of-type {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ap-mobile-drawer a {
+    padding: 10px;
+    border-bottom: none !important;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-primary);
+    min-height: auto;
+  }
+
+  .ap-mobile-drawer a span {
+    font-size: 13px;
+  }
+
+  .ap-mobile-section-label {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+
+  .ap-mobile-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin-top: 0 !important;
+  }
+
+  .ap-mobile-actions button {
     width: 100% !important;
-  }
-
-  header .ap-nav-links.open {
-    display: flex !important;
-  }
-
-  header .ap-nav-links.open a,
-  header .ap-nav-links.open button {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  header .ap-more-popup {
-    width: 100% !important;
-    max-width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
   }
 
   header nav a,
   header nav button {
-    white-space: nowrap;
+    white-space: normal;
   }
 
   div[style*="grid-template-columns: repeat(3,1fr)"] {

@@ -14,6 +14,7 @@ function Navbar({ onNav, active }) {
   }, [mobileOpen]);
 
   return (
+    <React.Fragment>
     <header style={{
       position: 'sticky', top: 0, zIndex: 50, background: 'rgba(255,255,255,0.86)',
       backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border-subtle)',
@@ -63,7 +64,9 @@ function Navbar({ onNav, active }) {
         </button>
       </div>
 
-      {/* Mobile drawer */}
+      </header>
+      {/* Mobile drawer — rendered OUTSIDE <header> so position:fixed is relative
+          to the viewport, not the header's backdrop-filter containing block. */}
       {mobileOpen && (
         <div className="ap-mobile-drawer">
           <nav style={{ display: 'flex', flexDirection: 'column' }}>
@@ -91,7 +94,7 @@ function Navbar({ onNav, active }) {
           </div>
         </div>
       )}
-    </header>
+    </React.Fragment>
   );
 }
 
