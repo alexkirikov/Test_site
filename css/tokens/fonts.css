@@ -1,0 +1,11 @@
+/* ============================================================
+   Autonomy Planner — Webfonts
+   Per style guide:
+     Headings → Sora      (Google)
+     Body     → Inter     (Google)
+   Roboto Mono is kept for tabular numeric / energy readouts
+   (kWh, kW, %, currency). All load from Google Fonts. For
+   self-hosted binaries, swap the @import for local @font-face.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Mono:wght@400;500;700&display=swap');

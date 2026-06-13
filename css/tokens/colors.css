@@ -1,0 +1,108 @@
+/* ============================================================
+   Autonomy Planner — Color tokens
+   Brand palette derived from the AP logo: deep petrol-teal +
+   solar gold, with an eco-green savings accent. Neutrals match
+   the Figma source (ink rgb(9,3,3)).
+   ============================================================ */
+
+:root {
+  /* ---- Primitives: Neutrals ---- */
+  --color-ink:        #090303;  /* near-black, primary text   */
+  --color-neutral-900:#161616;
+  --color-neutral-800:#2A2727;
+  --color-neutral-700:#524E4E;
+  --color-neutral-600:#686868;
+  --color-neutral-500:#818181;
+  --color-neutral-400:#B5B3B3;
+  --color-neutral-300:#DAD9D9;
+  --color-neutral-200:#EEEEEE;
+  --color-neutral-100:#F2F2F2;
+  --color-neutral-50: #F8F8F7;
+  --color-white:      #FFFFFF;
+
+  /* ---- Primitives: Petrol / Teal (primary brand) ---- */
+  --color-teal-950: #04222B;
+  --color-teal-900: #053744;
+  --color-teal-800: #0A4250;
+  --color-teal-700: #0E5563;   /* PRIMARY */
+  --color-teal-600: #186078;
+  --color-teal-500: #2E8C99;
+  --color-teal-400: #4FA9B3;
+  --color-teal-300: #84C6CD;
+  --color-teal-200: #B9E0E4;
+  --color-teal-100: #E2F2F4;
+  --color-teal-50:  #F0F8F9;
+
+  /* ---- Primitives: Solar Gold (secondary accent) ---- */
+  --color-gold-800: #8A5F18;
+  --color-gold-700: #A6741F;
+  --color-gold-600: #C0902F;
+  --color-gold-500: #D4A437;   /* ACCENT */
+  --color-gold-400: #E2B954;
+  --color-gold-300: #EDCE7E;
+  --color-gold-200: #F4E2A8;
+  --color-gold-100: #FBF3D6;
+  --color-gold-50:  #FDF9EC;
+
+  /* ---- Primitives: Eco Green (savings / efficiency) ---- */
+  --color-green-700: #075A40;
+  --color-green-600: #0B6E4F;  /* ECO */
+  --color-green-500: #10885F;
+  --color-green-200: #BFE5D5;
+  --color-green-100: #DFF3EA;
+
+  /* ---- Primitives: status ---- */
+  --color-red-500:   #FF4848;
+  --color-red-100:   #FFE3E3;
+  --color-blue-500:  #007BFF;
+  --color-blue-100:  #DCEBFF;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in product UI
+     ============================================================ */
+
+  /* Brand */
+  --brand-primary:        var(--color-teal-700);
+  --brand-primary-hover:  var(--color-teal-800);
+  --brand-primary-active: var(--color-teal-900);
+  --brand-accent:         var(--color-gold-500);
+  --brand-accent-hover:   var(--color-gold-600);
+  --brand-eco:            var(--color-green-600);
+
+  /* Text */
+  --text-primary:   var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-700);
+  --text-muted:     var(--color-neutral-500);
+  --text-brand:     var(--color-teal-700);
+  --text-accent:    var(--color-gold-700);
+  --text-inverse:   var(--color-white);
+  --text-on-brand:  var(--color-white);
+
+  /* Surfaces */
+  --surface-page:    var(--color-white);
+  --surface-subtle:  var(--color-neutral-100);
+  --surface-card:    var(--color-white);
+  --surface-muted:   var(--color-teal-50);
+  --surface-brand:   var(--color-teal-700);
+  --surface-dark:    var(--color-teal-950);
+  --surface-accent:  var(--color-gold-50);
+
+  /* Borders */
+  --border-subtle:  var(--color-neutral-200);
+  --border-default: var(--color-neutral-300);
+  --border-strong:  var(--color-ink);
+  --border-brand:   var(--color-teal-700);
+
+  /* Status */
+  --status-success:    var(--color-green-600);
+  --status-success-bg: var(--color-green-100);
+  --status-warning:    var(--color-gold-500);
+  --status-warning-bg: var(--color-gold-100);
+  --status-error:      var(--color-red-500);
+  --status-error-bg:   var(--color-red-100);
+  --status-info:       var(--color-blue-500);
+  --status-info-bg:    var(--color-blue-100);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(46, 140, 153, 0.45);
+}

@@ -1,0 +1,152 @@
+/* ============================================================
+   Autonomy Planner — Website · Responsive (mobile ≤ 767px)
+   Design target: 375px. Strategy:
+   1) Override scale tokens once → type + spacing + gutter shrink everywhere.
+   2) Utility classes hook the inline-style layouts (grids/splits/footer/nav).
+   These rules use !important because the kit lays out with inline styles.
+   ============================================================ */
+
+/* Hide the mobile-only chrome on desktop. */
+@media (min-width: 768px) {
+  .ap-hamburger,
+  .ap-mobile-drawer { display: none !important; }
+}
+
+@media (max-width: 767px) {
+  :root {
+    /* Tighter gutter on phones */
+    --container-pad: var(--container-pad-sm);   /* 16px */
+
+    /* Compressed type scale */
+    --fs-display: 2.25rem;   /* 36px */
+    --fs-h1:      1.875rem;  /* 30px */
+    --fs-h2:      1.625rem;  /* 26px */
+    --fs-h3:      1.375rem;  /* 22px */
+    --fs-h4:      1.1875rem; /* 19px */
+    --fs-h5:      1.0625rem; /* 17px */
+    --fs-lead:    1.0625rem; /* 17px */
+
+    /* Compressed vertical rhythm */
+    --space-28: 3.5rem;  /* 56px section pad */
+    --space-20: 3rem;    /* 48px */
+    --space-16: 2.25rem; /* 36px */
+    --space-12: 2rem;    /* 32px */
+  }
+
+  /* ---- Two-column splits (text + media, form + details) → stack ---- */
+  .ap-split {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  /* ---- Generic grids that should simply stack ---- */
+  .ap-stack {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* ---- Stat blocks: 2-up on mobile ---- */
+  .ap-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* ---- Card rows → horizontal snap carousel ---- */
+  .ap-carousel {
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: var(--container-pad);
+    /* bleed to screen edges so cards can peek */
+    margin-inline: calc(-1 * var(--container-pad));
+    padding-inline: var(--container-pad);
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+  .ap-carousel::-webkit-scrollbar { display: none; }
+  .ap-carousel > * {
+    flex: 0 0 80%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  /* let a wider card option be set per-block */
+  .ap-carousel.ap-carousel-wide > * { flex-basis: 86%; }
+
+  /* Carousel hint row (dots / swipe affordance) */
+  .ap-swipe-hint {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-size: var(--fs-tiny);
+    color: var(--text-muted);
+  }
+
+  /* ---- Button rows → full-width stacked ---- */
+  .ap-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+  .ap-actions > * { width: 100% !important; }
+
+  /* ---- Navbar ---- */
+  .ap-desktop-nav,
+  .ap-desktop-actions { display: none !important; }
+  .ap-hamburger { display: inline-flex !important; }
+
+  .ap-mobile-drawer {
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: #fff;
+    z-index: 90;
+    display: flex !important;
+    flex-direction: column;
+    padding: 16px var(--container-pad) 32px;
+    overflow-y: auto;
+    animation: ap-drawer-in .22s ease;
+  }
+  @keyframes ap-drawer-in {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- Footer ---- */
+  .ap-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 24px !important;
+  }
+  .ap-footer-brand { grid-column: 1 / -1; }
+  .ap-footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  /* ---- Blog featured card → stack ---- */
+  .ap-blog-featured { flex-direction: column !important; gap: 20px !important; }
+  .ap-blog-featured > :first-child { flex: none !important; }
+
+  /* ---- How-it-works step card inner grid → stack number/icon/text ---- */
+  .ap-step {
+    grid-template-columns: auto 1fr !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+  /* hide the oversized step index on phones; the icon carries the step */
+  .ap-step > :first-child { display: none !important; }
+
+  /* ---- Cases card inner split ---- */
+  .ap-case-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+
+  /* ---- Planner app shell ---- */
+  .ap-app-shell { grid-template-columns: 1fr !important; }
+  .ap-app-sidebar { display: none !important; }
+  .ap-app-cols { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .ap-app-main { padding: var(--space-8) !important; }
+}

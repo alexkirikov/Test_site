@@ -1,0 +1,56 @@
+/* ============================================================
+   Autonomy Planner — Base element defaults
+   Lightweight resets + element styling bound to the tokens.
+   Safe to ship: only sets sensible defaults, no utility soup.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  color: var(--text-primary);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-h1);  letter-spacing: var(--ls-tight); }
+h2 { font-size: var(--fs-h2);  letter-spacing: var(--ls-snug); line-height: var(--lh-tight); }
+h3 { font-size: var(--fs-h3);  letter-spacing: var(--ls-snug); }
+h4 { font-size: var(--fs-h4);  line-height: var(--lh-heading); }
+h5 { font-size: var(--fs-h5);  line-height: var(--lh-heading); }
+
+p { margin: 0; text-wrap: pretty; }
+
+a {
+  color: var(--text-brand);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--brand-primary-hover); }
+
+img, svg { display: block; max-width: 100%; }
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-xs);
+}
+
+/* Data / numeric readouts */
+.ap-mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
